@@ -135,10 +135,10 @@ class S {
     );
   }
 
-  /// ` Software developer`
+  /// `  Software developer`
   String get SoftwareDeveloper {
     return Intl.message(
-      ' Software developer',
+      '  Software developer',
       name: 'SoftwareDeveloper',
       desc: '',
       args: [],

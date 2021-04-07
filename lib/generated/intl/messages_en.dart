@@ -35,7 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Nikolaev" : MessageLookupByLibrary.simpleMessage("Nikolaev"),
     "Sergeevich" : MessageLookupByLibrary.simpleMessage("Sergeevich"),
     "Skills" : MessageLookupByLibrary.simpleMessage("Skills"),
-    "SoftwareDeveloper" : MessageLookupByLibrary.simpleMessage(" Software developer"),
+    "SoftwareDeveloper" : MessageLookupByLibrary.simpleMessage("  Software developer"),
     "Udovitsky" : MessageLookupByLibrary.simpleMessage("Udovitsky"),
     "WorkExperience" : MessageLookupByLibrary.simpleMessage("Work experience")
   };
