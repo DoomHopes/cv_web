@@ -1,8 +1,10 @@
 import 'dart:ui';
 
 import 'package:cv_web/utils/theme_provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
 
 void main() {
   runApp(MyApp());
@@ -43,6 +45,19 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final double textSize = 15;
 
+  Future<void> _launchInBrowser(String url) async {
+    if (await canLaunch(url)) {
+      await launch(
+        url,
+        forceSafariVC: false,
+        forceWebView: false,
+        headers: <String, String>{'my_header_key': 'my_header_value'},
+      );
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     var _themeProvider = Provider.of<ThemeChanger>(context);
@@ -68,59 +83,59 @@ class _MyHomePageState extends State<MyHomePage> {
           child: ListView(
             scrollDirection: Axis.vertical,
             children: <Widget>[
-              SizedBox(
-                height: 20,
-                width: 20,
-              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    ' Udovitsky',
-                    style: TextStyle(
-                        fontSize: titleSize, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    '22.04.1999',
-                    style: TextStyle(
-                        fontSize: textSize, fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    ' Alexander',
-                    style: TextStyle(
-                        fontSize: titleSize, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    'Mykolaiyv',
-                    style: TextStyle(
-                        fontSize: textSize, fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    ' Sergeevich',
-                    style: TextStyle(
-                        fontSize: titleSize, fontWeight: FontWeight.bold),
+                children: <Widget>[
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      SelectableText(
+                        'Udovitsky',
+                        style: TextStyle(
+                            fontSize: titleSize, fontWeight: FontWeight.bold),
+                      ),
+                      SelectableText(
+                        'Alexander',
+                        style: TextStyle(
+                            fontSize: titleSize, fontWeight: FontWeight.bold),
+                      ),
+                      SelectableText(
+                        'Sergeevich',
+                        style: TextStyle(
+                            fontSize: titleSize, fontWeight: FontWeight.bold),
+                      ),
+                    ],
                   ),
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(
+                      SelectableText(
+                        '22.04.1999',
+                        style: TextStyle(
+                            fontSize: textSize, fontWeight: FontWeight.bold),
+                      ),
+                      SelectableText(
+                        'Mykolaiyv',
+                        style: TextStyle(
+                            fontSize: textSize, fontWeight: FontWeight.bold),
+                      ),
+                      SelectableText(
                         '+380(99)522-13-95',
                         style: TextStyle(
                             fontSize: textSize, fontWeight: FontWeight.bold),
                       ),
-                      Text(
+                      SelectableText(
                         'diadia1911@ukr.net',
                         style: TextStyle(
                             fontSize: textSize, fontWeight: FontWeight.bold),
+                      ),
+                      Linkify(
+                        onOpen: (link) {
+                          _launchInBrowser(link.url.toString());
+                        },
+                        text: "GitHub - https://github.com/DoomHopes",
+                        style: TextStyle(color: Colors.blue),
+                        linkStyle: TextStyle(color: Colors.green),
                       ),
                     ],
                   )
@@ -168,16 +183,16 @@ class _MyHomePageState extends State<MyHomePage> {
                         style: TextStyle(
                             fontSize: textSize, fontWeight: FontWeight.normal),
                       ),
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
                       Text(
                         ' - NoSQL (MongoDB, Hive);',
                         style: TextStyle(
                             fontSize: textSize, fontWeight: FontWeight.normal),
                       ),
+                    ],
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
                       Text(
                         ' - MVP, MVC, MVVM;',
                         style: TextStyle(
@@ -185,6 +200,21 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       Text(
                         ' - English documentation reading level;',
+                        style: TextStyle(
+                            fontSize: textSize, fontWeight: FontWeight.normal),
+                      ),
+                      Text(
+                        ' - SOLID;',
+                        style: TextStyle(
+                            fontSize: textSize, fontWeight: FontWeight.normal),
+                      ),
+                      Text(
+                        ' - YAGNI;',
+                        style: TextStyle(
+                            fontSize: textSize, fontWeight: FontWeight.normal),
+                      ),
+                      Text(
+                        ' - DRY;',
                         style: TextStyle(
                             fontSize: textSize, fontWeight: FontWeight.normal),
                       ),
@@ -207,12 +237,12 @@ class _MyHomePageState extends State<MyHomePage> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(
+                  SelectableText(
                     '2014 – 2018 / Mykolayiv building college Kyiv national building and architectural university',
                     style: TextStyle(
                         fontSize: textSize, fontWeight: FontWeight.bold),
                   ),
-                  Text(
+                  SelectableText(
                     ' Software developer',
                     style: TextStyle(
                         fontSize: textSize, fontWeight: FontWeight.normal),
@@ -220,12 +250,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   SizedBox(
                     height: 5,
                   ),
-                  Text(
+                  SelectableText(
                     '2018 – 2020 / IT STEP',
                     style: TextStyle(
                         fontSize: textSize, fontWeight: FontWeight.bold),
                   ),
-                  Text(
+                  SelectableText(
                     ' Software developer',
                     style: TextStyle(
                         fontSize: textSize, fontWeight: FontWeight.normal),
@@ -244,12 +274,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 20,
                 width: 20,
               ),
-              Text(
+              SelectableText(
                 'January 2021 – February 2021/ Devsteam.mobi',
                 style:
                     TextStyle(fontSize: textSize, fontWeight: FontWeight.bold),
               ),
-              Text(
+              SelectableText(
                 'did an internship, was engaged in program refactoring',
                 style: TextStyle(
                     fontSize: textSize, fontWeight: FontWeight.normal),
@@ -266,7 +296,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 20,
                 width: 20,
               ),
-              Text(
+              SelectableText(
                 'Really love programming, purposeful, able to solve business problems. I get along well with people, I will be glad to work in a friendly team with experience',
                 style: TextStyle(
                     fontSize: textSize, fontWeight: FontWeight.normal),
