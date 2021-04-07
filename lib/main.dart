@@ -1,10 +1,13 @@
 import 'dart:ui';
 
+import 'package:cv_web/utils/locale_provider.dart';
 import 'package:cv_web/utils/theme_provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'generated/l10n.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,6 +19,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => ThemeChanger(lightTheme)),
+        ChangeNotifierProvider(create: (_) => LocaleChanger(Locale('en'))),
       ],
       child: MaterialAppWithTheme(),
     );
@@ -26,10 +30,19 @@ class MaterialAppWithTheme extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Provider.of<ThemeChanger>(context);
+    final locale = Provider.of<LocaleChanger>(context);
     return MaterialApp(
       title: 'Cv Alexandr Udovickiy',
       theme: theme.getTheme,
       debugShowCheckedModeBanner: false,
+      localizationsDelegates: [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      locale: locale.getLocale,
+      supportedLocales: S.delegate.supportedLocales,
       home: MyHomePage(),
     );
   }
@@ -61,17 +74,26 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     var _themeProvider = Provider.of<ThemeChanger>(context);
+    var _localeProvider = Provider.of<LocaleChanger>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text('Cv Alexandr Udovitsky'),
         actions: <Widget>[
           ElevatedButton(
-            child: Text('Change Theme'),
+            child: Text(S.of(context).ChangeTheme),
             onPressed: () {
               _themeProvider.setTheme(_themeProvider.getTheme == lightTheme
                   ? darkTheme
                   : lightTheme);
             },
+          ),
+          ElevatedButton(
+            onPressed: () {
+              _localeProvider.setLocale(
+                  _localeProvider.getLocale == enLocale ? ruLocale : enLocale);
+            },
+            child:
+                _localeProvider.getLocale == enLocale ? Text('Ru') : Text('En'),
           ),
         ],
       ),
@@ -90,17 +112,17 @@ class _MyHomePageState extends State<MyHomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       SelectableText(
-                        'Udovitsky',
+                        S.of(context).Udovitsky,
                         style: TextStyle(
                             fontSize: titleSize, fontWeight: FontWeight.bold),
                       ),
                       SelectableText(
-                        'Alexander',
+                        S.of(context).Alexander,
                         style: TextStyle(
                             fontSize: titleSize, fontWeight: FontWeight.bold),
                       ),
                       SelectableText(
-                        'Sergeevich',
+                        S.of(context).Sergeevich,
                         style: TextStyle(
                             fontSize: titleSize, fontWeight: FontWeight.bold),
                       ),
@@ -115,7 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             fontSize: textSize, fontWeight: FontWeight.bold),
                       ),
                       SelectableText(
-                        'Mykolaiyv',
+                        S.of(context).Nikolaev,
                         style: TextStyle(
                             fontSize: textSize, fontWeight: FontWeight.bold),
                       ),
@@ -137,6 +159,15 @@ class _MyHomePageState extends State<MyHomePage> {
                         style: TextStyle(color: Colors.blue),
                         linkStyle: TextStyle(color: Colors.green),
                       ),
+                      Linkify(
+                        onOpen: (link) {
+                          _launchInBrowser(link.url.toString());
+                        },
+                        text:
+                            "linkedin - https://www.linkedin.com/in/александр-удовицкий-43841a1bb/",
+                        style: TextStyle(color: Colors.blue),
+                        linkStyle: TextStyle(color: Colors.green),
+                      ),
                     ],
                   )
                 ],
@@ -145,7 +176,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 20,
               ),
               Text(
-                'Skills',
+                S.of(context).Skills,
                 style:
                     TextStyle(fontSize: titleSize, fontWeight: FontWeight.bold),
               ),
@@ -169,7 +200,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             fontSize: textSize, fontWeight: FontWeight.normal),
                       ),
                       Text(
-                        ' - Client-server apps dev experience (with REST API);',
+                        ' - ' +
+                            S.of(context).ClientServer +
+                            ' (with REST API);',
                         style: TextStyle(
                             fontSize: textSize, fontWeight: FontWeight.normal),
                       ),
@@ -199,7 +232,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             fontSize: textSize, fontWeight: FontWeight.normal),
                       ),
                       Text(
-                        ' - English documentation reading level;',
+                        ' - ' + S.of(context).EnglishLevel,
                         style: TextStyle(
                             fontSize: textSize, fontWeight: FontWeight.normal),
                       ),
@@ -226,7 +259,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 20,
               ),
               Text(
-                'Edication',
+                S.of(context).Education,
                 style:
                     TextStyle(fontSize: titleSize, fontWeight: FontWeight.bold),
               ),
@@ -238,12 +271,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   SelectableText(
-                    '2014 – 2018 / Mykolayiv building college Kyiv national building and architectural university',
+                    '2014 – 2018 / ' + S.of(context).MBK,
                     style: TextStyle(
                         fontSize: textSize, fontWeight: FontWeight.bold),
                   ),
                   SelectableText(
-                    ' Software developer',
+                    S.of(context).SoftwareDeveloper,
                     style: TextStyle(
                         fontSize: textSize, fontWeight: FontWeight.normal),
                   ),
@@ -251,12 +284,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: 5,
                   ),
                   SelectableText(
-                    '2018 – 2020 / IT STEP',
+                    '2018 – 2020 / ' + S.of(context).ITSTEP,
                     style: TextStyle(
                         fontSize: textSize, fontWeight: FontWeight.bold),
                   ),
                   SelectableText(
-                    ' Software developer',
+                    S.of(context).SoftwareDeveloper,
                     style: TextStyle(
                         fontSize: textSize, fontWeight: FontWeight.normal),
                   ),
@@ -266,7 +299,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 20,
               ),
               Text(
-                'Work experience',
+                S.of(context).WorkExperience,
                 style:
                     TextStyle(fontSize: titleSize, fontWeight: FontWeight.bold),
               ),
@@ -275,12 +308,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: 20,
               ),
               SelectableText(
-                'January 2021 – February 2021/ Devsteam.mobi',
+                S.of(context).FirstExp,
                 style:
                     TextStyle(fontSize: textSize, fontWeight: FontWeight.bold),
               ),
               SelectableText(
-                'did an internship, was engaged in program refactoring',
+                S.of(context).FirstExpSubtitle,
                 style: TextStyle(
                     fontSize: textSize, fontWeight: FontWeight.normal),
               ),
@@ -288,7 +321,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 20,
               ),
               Text(
-                'About me',
+                S.of(context).AboutMe,
                 style:
                     TextStyle(fontSize: titleSize, fontWeight: FontWeight.bold),
               ),
@@ -297,7 +330,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: 20,
               ),
               SelectableText(
-                'Really love programming, purposeful, able to solve business problems. I get along well with people, I will be glad to work in a friendly team with experience',
+                S.of(context).MyDescription,
                 style: TextStyle(
                     fontSize: textSize, fontWeight: FontWeight.normal),
               ),
