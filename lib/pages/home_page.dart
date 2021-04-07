@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
         child: ListView(
           scrollDirection: Axis.vertical,
           children: <Widget>[
