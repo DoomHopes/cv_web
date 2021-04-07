@@ -207,6 +207,11 @@ class _MyHomePageState extends State<MyHomePage> {
                           fontSize: _textSize, fontWeight: FontWeight.normal),
                     ),
                     Text(
+                      ' - Provider + ChangeNotifier;',
+                      style: TextStyle(
+                          fontSize: _textSize, fontWeight: FontWeight.normal),
+                    ),
+                    Text(
                       ' - ' + S.of(context).ClientServer + ' (with REST API);',
                       style: TextStyle(
                           fontSize: _textSize, fontWeight: FontWeight.normal),
