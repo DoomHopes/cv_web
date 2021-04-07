@@ -3,19 +3,23 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "844b8386038215cc7f1eb2b9011d67ea",
+  "assets/AssetManifest.json": "a2d219765430ab61a1cf93bfa43142f6",
 "assets/assets/Bender.jpg": "b89a3a22b9c82c8ac8b716589775285a",
 "assets/assets/Bender_Rodriguez.png": "3cc22f8e2ccfbf3783768354bea30e08",
-"assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
+"assets/assets/fonts/OpenSans-Bold.ttf": "0062c34665a3fc0f2278cd4e955702ec",
+"assets/assets/fonts/OpenSans-Regular.ttf": "5a798cdadc7cd321e3f72425b70bface",
+"assets/assets/fonts/Quicksand-Bold.ttf": "809cd8ab97c465b57cb1a44b1795f12c",
+"assets/assets/fonts/Quicksand-Regular.ttf": "678b12a6a938c32eb5fa88f2f439c2df",
+"assets/FontManifest.json": "4ef4beb15fc4bdbddaaf1c2dbc492e03",
 "assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
 "assets/NOTICES": "379124ba8a46fef67f4283e33aaa7ddd",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"index.html": "5afa9778f63ce109b1485c9c9a4463a2",
-"/": "5afa9778f63ce109b1485c9c9a4463a2",
-"main.dart.js": "5fa85a95dc874941e3e2c0a9b17a288b",
+"index.html": "830769650b35ae7831f908457fab49a8",
+"/": "830769650b35ae7831f908457fab49a8",
+"main.dart.js": "eb33d94910b3a6f417cd87aea139c903",
 "manifest.json": "5c27a8fc17f35d43997f02cb5948c754",
 "version.json": "b611757f7ec8b121dd2e66bc658e8703"
 };
