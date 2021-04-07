@@ -1,6 +1,8 @@
 import 'dart:ui';
 
+import 'package:cv_web/utils/theme_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,9 +11,22 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ThemeChanger(lightTheme)),
+      ],
+      child: MaterialAppWithTheme(),
+    );
+  }
+}
+
+class MaterialAppWithTheme extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final theme = Provider.of<ThemeChanger>(context);
     return MaterialApp(
       title: 'Cv Alexandr Udovickiy',
-      theme: ThemeData.dark(),
+      theme: theme.getTheme,
       debugShowCheckedModeBanner: false,
       home: MyHomePage(),
     );
@@ -30,14 +45,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var _themeProvider = Provider.of<ThemeChanger>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text('Cv Alexandr Udovitsky'),
         actions: <Widget>[
           ElevatedButton(
-            style: ButtonStyle(),
             child: Text('Change Theme'),
-            onPressed: () {},
+            onPressed: () {
+              _themeProvider.setTheme(_themeProvider.getTheme == lightTheme
+                  ? darkTheme
+                  : lightTheme);
+            },
           ),
         ],
       ),
