@@ -8,7 +8,7 @@ class TitleWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(fontSize: kTitleSize, fontWeight: FontWeight.bold),
+      style: kTitleStyle,
     );
   }
 }

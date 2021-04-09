@@ -11,11 +11,11 @@ class WorkExpWidget extends StatelessWidget {
       children: <Widget>[
         SelectableText(
           S.of(context).FirstExp,
-          style: TextStyle(fontSize: kTextSize, fontWeight: FontWeight.bold),
+          style: kTextStyle,
         ),
         SelectableText(
           S.of(context).FirstExpSubtitle,
-          style: TextStyle(fontSize: kTextSize, fontWeight: FontWeight.normal),
+          style: kTextStyle,
         ),
       ],
     );

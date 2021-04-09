@@ -4,6 +4,7 @@ import 'package:cv_web/utils/theme_provider.dart';
 import 'package:cv_web/widgets/description_widget.dart';
 import 'package:cv_web/widgets/education_widget.dart';
 import 'package:cv_web/widgets/head_widget.dart';
+import 'package:cv_web/widgets/my_sizedbox.dart';
 import 'package:cv_web/widgets/skills_widget.dart';
 import 'package:cv_web/widgets/title_widget.dart';
 import 'package:cv_web/widgets/work_exp_widget.dart';
@@ -64,10 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
             TitleWidget(
               text: S.of(context).Skills,
             ),
-            const SizedBox(
-              height: 20,
-              width: 20,
-            ),
+            MySizedBox(),
             SkillsWidget(),
             const Divider(
               height: 20,
@@ -75,10 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
             TitleWidget(
               text: S.of(context).Education,
             ),
-            const SizedBox(
-              height: 20,
-              width: 20,
-            ),
+            MySizedBox(),
             EducationWidget(),
             const Divider(
               height: 20,
@@ -86,10 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
             TitleWidget(
               text: S.of(context).WorkExperience,
             ),
-            const SizedBox(
-              height: 20,
-              width: 20,
-            ),
+            MySizedBox(),
             WorkExpWidget(),
             const Divider(
               height: 20,
@@ -97,11 +89,9 @@ class _MyHomePageState extends State<MyHomePage> {
             TitleWidget(
               text: S.of(context).AboutMe,
             ),
-            const SizedBox(
-              height: 20,
-              width: 20,
-            ),
+            MySizedBox(),
             DescriptionWidget(),
+            MySizedBox(),
           ],
         ),
       ),

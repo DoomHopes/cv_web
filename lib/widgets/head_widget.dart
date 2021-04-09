@@ -26,63 +26,64 @@ class _HeadWidgetState extends State<HeadWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: <
-        Widget>[
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+    return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          SelectableText(
-            S.of(context).Udovitsky,
-            style: TextStyle(fontSize: kTitleSize, fontWeight: FontWeight.bold),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              SelectableText(
+                S.of(context).Udovitsky,
+                style: kTitleStyle,
+              ),
+              SelectableText(
+                S.of(context).Alexander,
+                style: kTitleStyle,
+              ),
+              SelectableText(
+                S.of(context).Sergeevich,
+                style: kTitleStyle,
+              ),
+            ],
           ),
-          SelectableText(
-            S.of(context).Alexander,
-            style: TextStyle(fontSize: kTitleSize, fontWeight: FontWeight.bold),
-          ),
-          SelectableText(
-            S.of(context).Sergeevich,
-            style: TextStyle(fontSize: kTitleSize, fontWeight: FontWeight.bold),
-          ),
-        ],
-      ),
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          SelectableText(
-            '22.04.1999',
-            style: TextStyle(fontSize: kTextSize, fontWeight: FontWeight.bold),
-          ),
-          SelectableText(
-            S.of(context).Nikolaev,
-            style: TextStyle(fontSize: kTextSize, fontWeight: FontWeight.bold),
-          ),
-          SelectableText(
-            '+380(99)522-13-95',
-            style: TextStyle(fontSize: kTextSize, fontWeight: FontWeight.bold),
-          ),
-          SelectableText(
-            'diadia1911@ukr.net',
-            style: TextStyle(fontSize: kTextSize, fontWeight: FontWeight.bold),
-          ),
-          Linkify(
-            onOpen: (link) {
-              _launchInBrowser(link.url.toString());
-            },
-            text: "GitHub - https://github.com/DoomHopes",
-            style: TextStyle(color: Colors.blue),
-            linkStyle: TextStyle(color: Colors.green),
-          ),
-          Linkify(
-            onOpen: (link) {
-              _launchInBrowser(link.url.toString());
-            },
-            text:
-                "linkedin - https://www.linkedin.com/in/александр-удовицкий-43841a1bb/",
-            style: TextStyle(color: Colors.blue),
-            linkStyle: TextStyle(color: Colors.green),
-          ),
-        ],
-      )
-    ]);
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              SelectableText(
+                '22.04.1999',
+                style: kTextStyle,
+              ),
+              SelectableText(
+                S.of(context).Nikolaev,
+                style: kTextStyle,
+              ),
+              SelectableText(
+                '+380(99)522-13-95',
+                style: kTextStyle,
+              ),
+              SelectableText(
+                'diadia1911@ukr.net',
+                style: kTextStyle,
+              ),
+              Linkify(
+                onOpen: (link) {
+                  _launchInBrowser(link.url.toString());
+                },
+                text: "GitHub - https://github.com/DoomHopes",
+                style: TextStyle(color: Colors.blue),
+                linkStyle: TextStyle(color: Colors.green),
+              ),
+              Linkify(
+                onOpen: (link) {
+                  _launchInBrowser(link.url.toString());
+                },
+                text:
+                    "linkedin - https://www.linkedin.com/in/александр-удовицкий-43841a1bb/",
+                style: TextStyle(color: Colors.blue),
+                linkStyle: TextStyle(color: Colors.green),
+              ),
+            ],
+          )
+        ]);
   }
 }

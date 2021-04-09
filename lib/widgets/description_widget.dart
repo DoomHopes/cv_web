@@ -8,7 +8,7 @@ class DescriptionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SelectableText(
       S.of(context).MyDescription,
-      style: TextStyle(fontSize: kTextSize, fontWeight: FontWeight.normal),
+      style: kTextStyle,
     );
   }
 }

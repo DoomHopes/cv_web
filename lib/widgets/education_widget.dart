@@ -11,22 +11,22 @@ class EducationWidget extends StatelessWidget {
       children: <Widget>[
         SelectableText(
           '2014 – 2018 / ' + S.of(context).MBK,
-          style: TextStyle(fontSize: kTextSize, fontWeight: FontWeight.bold),
+          style: kTextStyle,
         ),
         SelectableText(
           S.of(context).SoftwareDeveloper,
-          style: TextStyle(fontSize: kTextSize, fontWeight: FontWeight.normal),
+          style: kTextStyle,
         ),
         SizedBox(
           height: 5,
         ),
         SelectableText(
           '2018 – 2020 / ' + S.of(context).ITSTEP,
-          style: TextStyle(fontSize: kTextSize, fontWeight: FontWeight.bold),
+          style: kTextStyle,
         ),
         SelectableText(
           S.of(context).SoftwareDeveloper,
-          style: TextStyle(fontSize: kTextSize, fontWeight: FontWeight.normal),
+          style: kTextStyle,
         ),
       ],
     );
