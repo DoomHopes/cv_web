@@ -2,6 +2,7 @@ import 'package:cv_web/generated/l10n.dart';
 import 'package:cv_web/utils/locale_provider.dart';
 import 'package:cv_web/utils/theme_provider.dart';
 import 'package:cv_web/widgets/description_widget.dart';
+import 'package:cv_web/widgets/divider_widget.dart';
 import 'package:cv_web/widgets/education_widget.dart';
 import 'package:cv_web/widgets/head_widget.dart';
 import 'package:cv_web/widgets/my_sizedbox.dart';
@@ -59,33 +60,25 @@ class _MyHomePageState extends State<MyHomePage> {
           scrollDirection: Axis.vertical,
           children: <Widget>[
             HeadWidget(),
-            const Divider(
-              height: 20,
-            ),
+            MyDivider(),
             TitleWidget(
               text: S.of(context).Skills,
             ),
             MySizedBox(),
             SkillsWidget(),
-            const Divider(
-              height: 20,
-            ),
+            MyDivider(),
             TitleWidget(
               text: S.of(context).Education,
             ),
             MySizedBox(),
             EducationWidget(),
-            const Divider(
-              height: 20,
-            ),
+            MyDivider(),
             TitleWidget(
               text: S.of(context).WorkExperience,
             ),
             MySizedBox(),
             WorkExpWidget(),
-            const Divider(
-              height: 20,
-            ),
+            MyDivider(),
             TitleWidget(
               text: S.of(context).AboutMe,
             ),

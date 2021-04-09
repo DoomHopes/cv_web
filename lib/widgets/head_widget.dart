@@ -24,7 +24,7 @@ class HeadWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        Column(
+        /*Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SelectableText(
@@ -40,24 +40,26 @@ class HeadWidget extends StatelessWidget {
               style: kTitleStyle,
             ),
           ],
+        ),*/
+        Text(
+          S.of(context).Udovitsky +
+              '\n' +
+              S.of(context).Alexander +
+              '\n' +
+              S.of(context).Sergeevich,
+          style: kTitleStyle,
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SelectableText(
-              '22.04.1999',
-              style: kTextStyle,
-            ),
-            SelectableText(
-              S.of(context).Nikolaev,
-              style: kTextStyle,
-            ),
-            SelectableText(
-              '+380(99)522-13-95',
-              style: kTextStyle,
-            ),
-            SelectableText(
-              'diadia1911@ukr.net',
+              '22.04.1999' +
+                  '\n' +
+                  S.of(context).Nikolaev +
+                  '\n' +
+                  '+380(99)522-13-95' +
+                  '\n' +
+                  'diadia1911@ukr.net',
               style: kTextStyle,
             ),
             Linkify(
@@ -65,8 +67,8 @@ class HeadWidget extends StatelessWidget {
                 _launchInBrowser(link.url.toString());
               },
               text: "GitHub - https://github.com/DoomHopes",
-              style: TextStyle(color: Colors.blue),
-              linkStyle: TextStyle(color: Colors.green),
+              style: kLinkStyle,
+              linkStyle: kLinkStyle,
             ),
             Linkify(
               onOpen: (link) {
@@ -74,8 +76,8 @@ class HeadWidget extends StatelessWidget {
               },
               text:
                   "linkedin - https://www.linkedin.com/in/александр-удовицкий-43841a1bb/",
-              style: TextStyle(color: Colors.blue),
-              linkStyle: TextStyle(color: Colors.green),
+              style: kLinkStyle,
+              linkStyle: kLinkStyle,
             ),
           ],
         )
