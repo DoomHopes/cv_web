@@ -31,7 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "FirstExpSubtitle" : MessageLookupByLibrary.simpleMessage("проходил стажировку, занимался рефакторингом программ"),
     "ITSTEP" : MessageLookupByLibrary.simpleMessage("КА Шаг"),
     "MBK" : MessageLookupByLibrary.simpleMessage("Николаевский строительный колледж"),
-    "MyDescription" : MessageLookupByLibrary.simpleMessage("Очень люблю программирование, целеустремлен, умеет решать бизнес-задачи. Хорошо лажу с людьми, буду рада работать в дружном коллективе с опытом"),
+    "MyDescription" : MessageLookupByLibrary.simpleMessage("Очень люблю программирование, целеустремлен, умеет решать бизнес-задачи. Хорошо лажу с людьми, буду рад работать в дружном коллективе с опытом"),
     "Nikolaev" : MessageLookupByLibrary.simpleMessage("Николаев"),
     "Sergeevich" : MessageLookupByLibrary.simpleMessage("Сергеевич"),
     "Skills" : MessageLookupByLibrary.simpleMessage("Умения и навыки"),
