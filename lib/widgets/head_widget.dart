@@ -5,12 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class HeadWidget extends StatefulWidget {
-  @override
-  _HeadWidgetState createState() => _HeadWidgetState();
-}
-
-class _HeadWidgetState extends State<HeadWidget> {
+class HeadWidget extends StatelessWidget {
   Future<void> _launchInBrowser(String url) async {
     if (await canLaunch(url)) {
       await launch(
@@ -27,63 +22,64 @@ class _HeadWidgetState extends State<HeadWidget> {
   @override
   Widget build(BuildContext context) {
     return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              SelectableText(
-                S.of(context).Udovitsky,
-                style: kTitleStyle,
-              ),
-              SelectableText(
-                S.of(context).Alexander,
-                style: kTitleStyle,
-              ),
-              SelectableText(
-                S.of(context).Sergeevich,
-                style: kTitleStyle,
-              ),
-            ],
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              SelectableText(
-                '22.04.1999',
-                style: kTextStyle,
-              ),
-              SelectableText(
-                S.of(context).Nikolaev,
-                style: kTextStyle,
-              ),
-              SelectableText(
-                '+380(99)522-13-95',
-                style: kTextStyle,
-              ),
-              SelectableText(
-                'diadia1911@ukr.net',
-                style: kTextStyle,
-              ),
-              Linkify(
-                onOpen: (link) {
-                  _launchInBrowser(link.url.toString());
-                },
-                text: "GitHub - https://github.com/DoomHopes",
-                style: TextStyle(color: Colors.blue),
-                linkStyle: TextStyle(color: Colors.green),
-              ),
-              Linkify(
-                onOpen: (link) {
-                  _launchInBrowser(link.url.toString());
-                },
-                text:
-                    "linkedin - https://www.linkedin.com/in/александр-удовицкий-43841a1bb/",
-                style: TextStyle(color: Colors.blue),
-                linkStyle: TextStyle(color: Colors.green),
-              ),
-            ],
-          )
-        ]);
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            SelectableText(
+              S.of(context).Udovitsky,
+              style: kTitleStyle,
+            ),
+            SelectableText(
+              S.of(context).Alexander,
+              style: kTitleStyle,
+            ),
+            SelectableText(
+              S.of(context).Sergeevich,
+              style: kTitleStyle,
+            ),
+          ],
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            SelectableText(
+              '22.04.1999',
+              style: kTextStyle,
+            ),
+            SelectableText(
+              S.of(context).Nikolaev,
+              style: kTextStyle,
+            ),
+            SelectableText(
+              '+380(99)522-13-95',
+              style: kTextStyle,
+            ),
+            SelectableText(
+              'diadia1911@ukr.net',
+              style: kTextStyle,
+            ),
+            Linkify(
+              onOpen: (link) {
+                _launchInBrowser(link.url.toString());
+              },
+              text: "GitHub - https://github.com/DoomHopes",
+              style: TextStyle(color: Colors.blue),
+              linkStyle: TextStyle(color: Colors.green),
+            ),
+            Linkify(
+              onOpen: (link) {
+                _launchInBrowser(link.url.toString());
+              },
+              text:
+                  "linkedin - https://www.linkedin.com/in/александр-удовицкий-43841a1bb/",
+              style: TextStyle(color: Colors.blue),
+              linkStyle: TextStyle(color: Colors.green),
+            ),
+          ],
+        )
+      ],
+    );
   }
 }
