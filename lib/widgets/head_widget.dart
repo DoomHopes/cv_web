@@ -35,17 +35,25 @@ class HeadWidget extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            SelectableText(
-              '22.04.1999' +
-                  '\n' +
-                  S.of(context).Nikolaev +
-                  '\n' +
-                  '+380(99)522-13-95' +
-                  '\n' +
-                  'ukr.net - diadia1911@ukr.net' +
-                  '\n' +
-                  'gmail - alex.udovickiy1911@gmail.com',
-              style: kTextStyle,
+            Text(
+              '22.04.1999',
+              overflow: TextOverflow.clip,
+            ),
+            Text(
+              S.of(context).Nikolaev,
+              overflow: TextOverflow.clip,
+            ),
+            Text(
+              '+380(99)522-13-95',
+              overflow: TextOverflow.clip,
+            ),
+            Text(
+              'ukr.net - diadia1911@ukr.net',
+              overflow: TextOverflow.clip,
+            ),
+            Text(
+              'gmail - alex.udovickiy1911@gmail.com',
+              overflow: TextOverflow.clip,
             ),
             Linkify(
               onOpen: (link) {
@@ -54,15 +62,16 @@ class HeadWidget extends StatelessWidget {
               text: "GitHub - https://github.com/DoomHopes",
               style: kLinkStyle,
               linkStyle: kLinkStyle,
+              overflow: TextOverflow.clip,
             ),
             Linkify(
               onOpen: (link) {
                 _launchInBrowser(link.url.toString());
               },
-              text:
-                  "linkedin - https://www.linkedin.com/in/александр-удовицкий-43841a1bb/",
+              text: "linkedin - https://clck.ru/UFAyN",
               style: kLinkStyle,
               linkStyle: kLinkStyle,
+              overflow: TextOverflow.clip,
             ),
           ],
         )
