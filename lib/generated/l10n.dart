@@ -105,10 +105,10 @@ class S {
     );
   }
 
-  /// `English documentation reading level`
+  /// `English documentation reading level;`
   String get EnglishLevel {
     return Intl.message(
-      'English documentation reading level',
+      'English documentation reading level;',
       name: 'EnglishLevel',
       desc: '',
       args: [],

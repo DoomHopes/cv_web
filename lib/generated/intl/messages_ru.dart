@@ -26,7 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ChangeTheme" : MessageLookupByLibrary.simpleMessage("Изменить тему"),
     "ClientServer" : MessageLookupByLibrary.simpleMessage("Опыт разработки клиент-серверных приложений"),
     "Education" : MessageLookupByLibrary.simpleMessage("Образование"),
-    "EnglishLevel" : MessageLookupByLibrary.simpleMessage("Английский на уровне чтения документации"),
+    "EnglishLevel" : MessageLookupByLibrary.simpleMessage("Английский на уровне чтения документации;"),
     "FirstExp" : MessageLookupByLibrary.simpleMessage("Январь 2021 - Февраль 2021/ Devsteam.mobi"),
     "FirstExpSubtitle" : MessageLookupByLibrary.simpleMessage("проходил стажировку, занимался рефакторингом программ"),
     "ITSTEP" : MessageLookupByLibrary.simpleMessage("КА Шаг"),
