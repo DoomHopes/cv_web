@@ -34594,7 +34594,7 @@ r=C.c.L(r,T.d8(n,p,n,H.a([],s),p))+"\n"
 L.cG(b,C.ac,k).toString
 r=L.de(C.c.L(r,T.d8(m,p,m,H.a([],s),p)),p,$.acE())
 L.cG(b,C.ac,k).toString
-s=O.lI(C.c.L("22.04.1999\n",T.d8(l,p,l,H.a([],s),p))+"\n+380(99)522-13-95\ndiadia1911@ukr.net",$.f9())
+s=O.lI(C.c.L("22.04.1999\n",T.d8(l,p,l,H.a([],s),p))+"\n+380(99)522-13-95\nukr.net - diadia1911@ukr.net\ngmail - alex.udovickiy1911@gmail.com",$.f9())
 k=$.akB()
 q=t.fQ
 return T.ab0(H.a([r,T.zK(H.a([s,F.aeW(k,new Y.UJ(this),k,"GitHub - https://github.com/DoomHopes"),F.aeW(k,new Y.UK(this),k,"linkedin - https://www.linkedin.com/in/\u0430\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440-\u0443\u0434\u043e\u0432\u0438\u0446\u043a\u0438\u0439-43841a1bb/")],q),C.br,C.bH,C.bI)],q),C.h9,C.qf,C.bI)}}

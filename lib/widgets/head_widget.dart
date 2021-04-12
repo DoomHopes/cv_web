@@ -24,23 +24,6 @@ class HeadWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        /*Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            SelectableText(
-              S.of(context).Udovitsky,
-              style: kTitleStyle,
-            ),
-            SelectableText(
-              S.of(context).Alexander,
-              style: kTitleStyle,
-            ),
-            SelectableText(
-              S.of(context).Sergeevich,
-              style: kTitleStyle,
-            ),
-          ],
-        ),*/
         Text(
           S.of(context).Udovitsky +
               '\n' +
@@ -59,7 +42,9 @@ class HeadWidget extends StatelessWidget {
                   '\n' +
                   '+380(99)522-13-95' +
                   '\n' +
-                  'diadia1911@ukr.net',
+                  'ukr.net - diadia1911@ukr.net' +
+                  '\n' +
+                  'gmail - alex.udovickiy1911@gmail.com',
               style: kTextStyle,
             ),
             Linkify(
