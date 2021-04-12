@@ -22,6 +22,7 @@ class CustomDrawerWidget extends StatelessWidget {
                 _themeProvider.setTheme(_themeProvider.getTheme == lightTheme
                     ? darkTheme
                     : lightTheme);
+                Navigator.pop(context);
               },
             ),
           ),
@@ -32,6 +33,7 @@ class CustomDrawerWidget extends StatelessWidget {
                 _localeProvider.setLocale(_localeProvider.getLocale == enLocale
                     ? ruLocale
                     : enLocale);
+                Navigator.pop(context);
               },
               child: _localeProvider.getLocale == enLocale
                   ? Text('Ru')
