@@ -1,6 +1,7 @@
 import 'package:cv_web/generated/l10n.dart';
 import 'package:cv_web/utils/locale_provider.dart';
 import 'package:cv_web/utils/theme_provider.dart';
+import 'package:cv_web/widgets/contacts_widget.dart';
 import 'package:cv_web/widgets/description_widget.dart';
 import 'package:cv_web/widgets/divider_widget.dart';
 import 'package:cv_web/widgets/drawer_widget.dart';
@@ -67,11 +68,34 @@ class MyHomePage extends StatelessWidget {
           children: <Widget>[
             HeadWidget(),
             MyDivider(),
-            TitleWidget(
-              text: S.of(context).Skills,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Container(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      TitleWidget(
+                        text: S.of(context).Skills,
+                      ),
+                      MySizedBox(),
+                      SkillsWidget(),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: <Widget>[
+                      TitleWidget(
+                        text: 'Contacts',
+                      ),
+                      MySizedBox(),
+                      ContactsWidget(),
+                    ],
+                  ),
+                )
+              ],
             ),
-            MySizedBox(),
-            SkillsWidget(),
             MyDivider(),
             TitleWidget(
               text: S.of(context).Education,
