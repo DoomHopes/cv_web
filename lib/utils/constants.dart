@@ -13,6 +13,6 @@ TextStyle kTitleStyle = GoogleFonts.allerta(
     fontSize: kTitleSize,
     fontWeight: FontWeight.bold);
 
-const double kTitleSize = 20;
+const double kTitleSize = 15;
 
-const double kTextSize = 15;
+const double kTextSize = 10;
