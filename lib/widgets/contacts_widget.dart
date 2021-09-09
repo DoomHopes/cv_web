@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'title_widget.dart';
+
 class ContactsWidget extends StatelessWidget {
   Future<void> _launchInBrowser(String url) async {
     if (await canLaunch(url)) {
@@ -23,25 +25,28 @@ class ContactsWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(
-          '22.04.1999',
-          overflow: TextOverflow.clip,
+        TitleWidget(
+          text: 'Contacts',
         ),
         Text(
           S.of(context).Nikolaev,
           overflow: TextOverflow.clip,
+          style: kTextStyle,
         ),
         Text(
           '+380(99)522-13-95',
           overflow: TextOverflow.clip,
+          style: kTextStyle,
         ),
         Text(
           'ukr.net - diadia1911@ukr.net',
           overflow: TextOverflow.clip,
+          style: kTextStyle,
         ),
         Text(
           'gmail - alex.udovickiy1911@gmail.com',
           overflow: TextOverflow.clip,
+          style: kTextStyle,
         ),
         Linkify(
           onOpen: (link) {

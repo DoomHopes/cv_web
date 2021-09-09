@@ -59,63 +59,59 @@ class MyHomePage extends StatelessWidget {
         ],
       ),
       drawer: CustomDrawerWidget(),
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-        child: ListView(
-          scrollDirection: Axis.vertical,
-          children: <Widget>[
-            HeadWidget(),
-            MyDivider(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      TitleWidget(
-                        text: S.of(context).Skills,
-                      ),
-                      MySizedBox(),
-                      SkillsWidget(),
-                    ],
+      body: Center(
+        child: Container(
+          height: 1000,
+          width: 500,
+          padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+          child: ListView(
+            scrollDirection: Axis.vertical,
+            children: <Widget>[
+              HeadWidget(),
+              MyDivider(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Container(
+                    child: Column(
+                      verticalDirection: VerticalDirection.up,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        SkillsWidget(),
+                      ],
+                    ),
                   ),
-                ),
-                Container(
-                  child: Column(
-                    children: <Widget>[
-                      TitleWidget(
-                        text: 'Contacts',
-                      ),
-                      MySizedBox(),
-                      ContactsWidget(),
-                    ],
-                  ),
-                )
-              ],
-            ),
-            MyDivider(),
-            TitleWidget(
-              text: S.of(context).Education,
-            ),
-            MySizedBox(),
-            EducationWidget(),
-            MyDivider(),
-            TitleWidget(
-              text: S.of(context).WorkExperience,
-            ),
-            MySizedBox(),
-            WorkExpWidget(),
-            MyDivider(),
-            TitleWidget(
-              text: S.of(context).AboutMe,
-            ),
-            MySizedBox(),
-            DescriptionWidget(),
-            MySizedBox(),
-          ],
+                  Container(
+                    child: Column(
+                      verticalDirection: VerticalDirection.up,
+                      children: <Widget>[
+                        ContactsWidget(),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+              MyDivider(),
+              TitleWidget(
+                text: S.of(context).Education,
+              ),
+              MySizedBox(),
+              EducationWidget(),
+              MyDivider(),
+              TitleWidget(
+                text: S.of(context).WorkExperience,
+              ),
+              MySizedBox(),
+              WorkExpWidget(),
+              MyDivider(),
+              TitleWidget(
+                text: S.of(context).AboutMe,
+              ),
+              MySizedBox(),
+              DescriptionWidget(),
+              MySizedBox(),
+            ],
+          ),
         ),
       ),
     );

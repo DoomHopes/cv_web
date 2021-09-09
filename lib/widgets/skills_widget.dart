@@ -2,12 +2,17 @@ import 'package:cv_web/generated/l10n.dart';
 import 'package:cv_web/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 
+import 'title_widget.dart';
+
 class SkillsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
+        TitleWidget(
+          text: S.of(context).Skills,
+        ),
         Text(
           ' - Flutter;',
           style: kTextStyle,
