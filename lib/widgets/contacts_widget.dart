@@ -1,6 +1,7 @@
 import 'package:cv_web/generated/l10n.dart';
 import 'package:cv_web/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -28,43 +29,97 @@ class ContactsWidget extends StatelessWidget {
         TitleWidget(
           text: 'Contacts',
         ),
-        Text(
-          S.of(context).Nikolaev,
-          overflow: TextOverflow.clip,
-          style: kTextStyle,
+        Row(
+          children: <Widget>[
+            Icon(
+              Icons.add_location,
+              color: Colors.blueAccent,
+              size: 10.0,
+            ),
+            Text(
+              S.of(context).Nikolaev,
+              overflow: TextOverflow.clip,
+              style: kTextStyle,
+            ),
+          ],
         ),
-        Text(
-          '+380(99)522-13-95',
-          overflow: TextOverflow.clip,
-          style: kTextStyle,
+        Row(
+          children: <Widget>[
+            Icon(
+              Icons.phone,
+              color: Colors.blueAccent,
+              size: 10.0,
+            ),
+            Text(
+              '+380(99)522-13-95',
+              overflow: TextOverflow.clip,
+              style: kTextStyle,
+            ),
+          ],
         ),
-        Text(
-          'ukr.net - diadia1911@ukr.net',
-          overflow: TextOverflow.clip,
-          style: kTextStyle,
+        Row(
+          children: <Widget>[
+            Icon(
+              Icons.mail,
+              color: Colors.blueAccent,
+              size: 10.0,
+            ),
+            Text(
+              'ukr.net - diadia1911@ukr.net',
+              overflow: TextOverflow.clip,
+              style: kTextStyle,
+            ),
+          ],
         ),
-        Text(
-          'gmail - alex.udovickiy1911@gmail.com',
-          overflow: TextOverflow.clip,
-          style: kTextStyle,
+        Row(
+          children: <Widget>[
+            Icon(
+              Icons.mail,
+              color: Colors.blueAccent,
+              size: 10.0,
+            ),
+            Text(
+              'gmail - alex.udovickiy1911@gmail.com',
+              overflow: TextOverflow.clip,
+              style: kTextStyle,
+            ),
+          ],
         ),
-        Linkify(
-          onOpen: (link) {
-            _launchInBrowser(link.url.toString());
-          },
-          text: "GitHub - https://github.com/DoomHopes",
-          style: kLinkStyle,
-          linkStyle: kLinkStyle,
-          overflow: TextOverflow.clip,
+        Row(
+          children: <Widget>[
+            Text(
+              'GitHub - ',
+              overflow: TextOverflow.clip,
+              style: kTextStyle,
+            ),
+            Linkify(
+              onOpen: (link) {
+                _launchInBrowser(link.url.toString());
+              },
+              text: "https://github.com/DoomHopes",
+              style: kLinkStyle,
+              linkStyle: kLinkStyle,
+              overflow: TextOverflow.clip,
+            ),
+          ],
         ),
-        Linkify(
-          onOpen: (link) {
-            _launchInBrowser(link.url.toString());
-          },
-          text: "linkedin - https://clck.ru/UFAyN",
-          style: kLinkStyle,
-          linkStyle: kLinkStyle,
-          overflow: TextOverflow.clip,
+        Row(
+          children: <Widget>[
+            Text(
+              'Linkedin - ',
+              overflow: TextOverflow.clip,
+              style: kTextStyle,
+            ),
+            Linkify(
+              onOpen: (link) {
+                _launchInBrowser(link.url.toString());
+              },
+              text: "https://clck.ru/UFAyN",
+              style: kLinkStyle,
+              linkStyle: kLinkStyle,
+              overflow: TextOverflow.clip,
+            ),
+          ],
         ),
       ],
     );
