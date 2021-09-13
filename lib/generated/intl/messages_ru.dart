@@ -24,7 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "AboutMe" : MessageLookupByLibrary.simpleMessage("Обо мне"),
     "Alexander" : MessageLookupByLibrary.simpleMessage("Александр"),
     "ChangeTheme" : MessageLookupByLibrary.simpleMessage("Изменить тему"),
-    "ClientServer" : MessageLookupByLibrary.simpleMessage("Опыт разработки клиент-серверных приложений"),
+    "ClientServer" : MessageLookupByLibrary.simpleMessage("Опыт разработки клиент-серверных приложений \n"),
     "Education" : MessageLookupByLibrary.simpleMessage("Образование"),
     "EnglishLevel" : MessageLookupByLibrary.simpleMessage("Английский на уровне чтения документации;"),
     "FirstExp" : MessageLookupByLibrary.simpleMessage("Январь 2021 - Февраль 2021/ Devsteam.mobi"),
